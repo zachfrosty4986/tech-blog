@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+    {{!-- <-- Linking our files to this handebar --> --}}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Astro Journal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/bulma-overrides.css">
+    {{!-- Renders Css to homepage --}}
+    {{#if (eq title "Home")}}
+    <link rel="stylesheet" href="/css/home.css">
+    {{/if}}
+        {{!-- Renders Css to log-in page --}}
+    {{#if (eq title "Login")}}
+    <link rel="stylesheet" href="/css/login.css">
+    {{/if}}
+    {{!-- Renders Css to profile page --}}
+    {{#if (eq title "Profile")}}
+    <link rel="stylesheet" href="/css/profile.css">
+    {{/if}}
+  </head>
+  <body>
+    <header>
+        {{> navbar}}
+    </header>
+    <main>
+        {{{body}}}
+    </main>
