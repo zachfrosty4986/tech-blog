@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="container" id="click">
+    <h1>{{title}} <div id="blogNum">{{id}}</div> </h1>
+    <p>{{content}}</p>
+    <p>Posted by {{user.name}} on {{date_posted}}</p>
+    <div>
+      &#128077; {{likes}}
+      <div class="control">
+        <textarea class="textarea" placeholder="What would you like to say?" id="commentField"></textarea>
+        <button class="button" id="addLike">Like this post!</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div>
+  {{#if comments.length}}
+  {{#each comments as |comment|}}
+  <div>
+    <p>{{comment.content}}</p><br>
+    <p>Comment Made: {{comment.date_posted}}</p>
+    <br>
+    <p>By:{{user.name}}</p>
+    {{/each}}
+    {{else}}
+    <h1>No comments yet, be the first!</h1>
+    {{/if}}
+    <button class="button" id="addComment">Add Comment</button>
+  </div>
+</div>
+
+<script src="/js/feedback.js"></script>
