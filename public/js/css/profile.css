@@ -1,0 +1,26 @@
+body {
+    /* background-color: grey; */
+}
+
+
+h1 {
+    padding-top: 8%;
+    padding-bottom: 2%;
+}
+
+.blog-section {
+    width: 20%;
+}
+
+#buttons {
+    padding-top: 5%;
+}
+
+hr {
+    height: 5px;
+}
+
+#blog-entry {
+    padding-top: 2%;
+    padding-left: 45%;
+}
