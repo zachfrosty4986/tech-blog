@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">Blog Feed</h1>
+    {{#each blogs as |blog|}}
+    <h3>
+      <a href="/blog/{{blog.id}}">{{blog.title}}</a>
+    </h3>
+    <p>Created by {{blog.user.name}} on {{blog.date_posted}}</p>
+    <p> {{blog.content}} </p>
+    <div>
+      &#128077; {{blog.likes}} 
+      <div class="control">
+        <button class="button" id="addLike">Like this post!</button>
+      </div>
+    </div>
+    <br>
+    {{/each}}
+  </div>
