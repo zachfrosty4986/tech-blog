@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const blogData = await Blog.findAll({
       include: [
         {
-          model: User,
+          model: Login,
           attributes: ['name'],
         },
       ],
@@ -18,11 +18,12 @@ router.get('/', async (req, res) => {
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('index', { 
       blogs, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -32,7 +33,7 @@ router.get('/blog/:id', async (req, res) => {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: Login,
           attributes: ['name'],
         },
       ],
@@ -40,8 +41,8 @@ router.get('/blog/:id', async (req, res) => {
 
     const blog = blogData.get({ plain: true });
 
-    res.render('blog', {
-      ...project,
+    res.render('singleBlog', {
+      ...blog,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -53,18 +54,19 @@ router.get('/blog/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const loginData = await Login.findByPk(req.session.user_id, {
+    const loginData = await Login.findByPk(req.session.login_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Blog }],
     });
 
-    const user = loginData.get({ plain: true });
+    const login = loginData.get({ plain: true });
 
     res.render('profile', {
-      ...user,
+      ...login,
       logged_in: true
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -77,6 +79,14 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/signup', (req,res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile')
+    return;
+  }
+  res.render('signup');
 });
 
 module.exports = router;

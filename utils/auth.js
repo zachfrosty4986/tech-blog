@@ -1,4 +1,4 @@
-const isAuthorized = (req, res, next) => {
+const isAuth = (req, res, next) => {
     // redirect the user to log in before doing any api request where this is added
     if (!req.session.logged_in) {
       res.redirect('/login');
@@ -8,4 +8,4 @@ const isAuthorized = (req, res, next) => {
     }
   };
   
-  module.exports = isAuthorized;
+  module.exports = isAuth;

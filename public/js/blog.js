@@ -2,14 +2,14 @@ const newBlog = async (event) => {
     //adds a new blog
     event.preventDefault();
 
-    const title = document.querySelector('#title').value
-    const content = document.querySelector('#blogContent').value
+    const name = document.querySelector('#title').value
+    const description = document.querySelector('#blogContent').value
 
-    console.log(title, content)
-    if (title && content) {
+    console.log(name, description)
+    if (name && description) {
         const response = await fetch('/api/blog', {
             method: 'POST',
-            body: JSON.stringify({ title, content }),
+            body: JSON.stringify({ name, description }),
             headers: {
                 'Content-Type': 'application/json',
               },

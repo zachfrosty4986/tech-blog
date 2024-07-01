@@ -4,7 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-// const hbsHelpers = require('handlebars-helpers')();
+const hbsHelpers = require('handlebars-helpers')();
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 //handlebars engine
 const hbs = exphbs.create({ 
-    // helpers: hbsHelpers
+    helpers: hbsHelpers
 });
 
 //cookie setup
