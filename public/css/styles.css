@@ -1,64 +1,75 @@
 /* Reset default styles */
+/* Apply to all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-    padding: 20px;
+    font-family: Arial, sans-serif; /* Set font family for body text */
+    line-height: 1.6; /* Set line height for body text */
+    background-color: #f0f0f0; /* Set background color for body */
+    padding: 20px; /* Add padding around the content within the body */
 }
 
+/* Header styles */
 header {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Center-align text in header */
+    margin-bottom: 20px; /* Add bottom margin to header */
 }
 
+/* Blog post container styles */
 .blog-post {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fff; /* White background for blog posts */
+    padding: 20px; /* Padding inside blog posts */
+    margin-bottom: 20px; /* Bottom margin for blog posts */
+    border-radius: 8px; /* Rounded corners for blog posts */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Box shadow for blog posts */
 }
 
+/* Blog post title styles */
 .blog-post h2 {
-    color: #333;
+    color: #333; /* Dark grey color for blog post titles */
 }
 
+/* Blog post content styles */
 .blog-post p {
-    color: #666;
+    color: #666; /* Medium grey color for blog post content */
 }
 
+/* Comment list styles */
 .comments {
-    list-style-type: none;
-    margin-top: 10px;
+    list-style-type: none; /* Remove bullet points from comments list */
+    margin-top: 10px; /* Top margin for comments list */
 }
 
+/* Comment form styles */
 .comment-form {
-    margin-top: 10px;
+    margin-top: 10px; /* Top margin for comment form */
 }
 
+/* Input field styles within comment form */
 .comment-form input[type="text"] {
-    width: calc(100% - 80px);
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: calc(100% - 80px); /* Calculate input field width */
+    padding: 8px; /* Padding inside input fields */
+    margin-right: 10px; /* Right margin for input fields */
+    border: 1px solid #ccc; /* Light grey border around input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
 }
 
+/* Button styles within comment form */
 .comment-form button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 8px 15px; /* Padding inside buttons */
+    background-color: #007bff; /* Blue background color for buttons */
+    color: #fff; /* White text color for buttons */
+    border: none; /* Remove border from buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
+/* Button hover styles */
 .comment-form button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue background color on button hover */
 }

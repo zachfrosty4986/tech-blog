@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html data-theme="dark">
-    {{!-- <-- Linking our files to this handebar --> --}}
+  <!-- Start of HTML document -->
   <head>
+    <!-- Meta tags for character set and viewport -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title of the webpage -->
     <title>Tech Blog</title>
+    <!-- Link to Bulma CSS framework -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <!-- Link to custom stylesheets -->
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/bulma-overrides.css">
-    {{!-- Renders Css to homepage --}}
+    <!-- Conditional stylesheet based on 'title' variable -->
     {{#if (eq title "Home")}}
     <link rel="stylesheet" href="/css/home.css">
     {{/if}}
-        {{!-- Renders Css to log-in page --}}
+    <!-- Conditional stylesheet based on 'title' variable -->
     {{#if (eq title "Login")}}
     <link rel="stylesheet" href="/css/login.css">
     {{/if}}
-    {{!-- Renders Css to profile page --}}
+    <!-- Conditional stylesheet based on 'title' variable -->
     {{#if (eq title "Profile")}}
     <link rel="stylesheet" href="/css/profile.css">
     {{/if}}
   </head>
+  <!-- Start of HTML body -->
   <body>
+    <!-- Header section, includes navbar -->
     <header>
         {{> navbar}}
     </header>
+    <!-- Main content section -->
     <main>
         {{{body}}}
     </main>

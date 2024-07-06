@@ -1,2 +1,5 @@
+# .env: Exclude environment variable files
 .env
+
+# node_modules: Exclude npm packages
 node_modules

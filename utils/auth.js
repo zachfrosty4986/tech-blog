@@ -1,11 +1,12 @@
 const isAuth = (req, res, next) => {
-    // redirect the user to log in before doing any api request where this is added
-    if (!req.session.logged_in) {
+  // Check if the user is logged in
+  if (!req.session.logged_in) {
+      // Redirect to the login page if not logged in
       res.redirect('/login');
-    } else {
-      // next moves the request to the next step
+  } else {
+      // Call the next middleware or route handler
       next();
-    }
-  };
-  
-  module.exports = isAuth;
+  }
+};
+
+module.exports = isAuth;

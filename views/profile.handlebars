@@ -1,62 +1,69 @@
 <body>
-{{!-- Title --}}
-<section class="section is-family-monospace">
-    <div class="container-for-title">
-    <h1 class="title columns is-centered">Welcome, {{name}}</h1>
-    <h2 class="subtitle columns is-centered">Tell us what's on your mind about anything technology!</h2>
-    </div>
-</section>
-{{!-- Blog Post section --}}
-<section class="columns is-centered is-family-monospace">
-  <section class="blog-section column is-half">cd ..
-    <div class="field">
-      <label class="label">Title</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Name of your post" id="title">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Selling Price</label>
-        <input class="input" type="email" placeholder="Price of tech equipment">
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Content</label>
-      <div class="control">
-        <textarea class="textarea" placeholder="Talk about your finding" id="blogContent"></textarea>
-      </div>
-    </div>
-
-
-  <section class="columns is-centered" id="buttons">
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="button is-link" id="submitBlog">Submit</button>
-      </div>
-      <div class="control">
-        <button class="button is-link is-light">Clear</button>
-      </div>
-    </div>
+    {{!-- Title Section --}}
+    <section class="section is-family-monospace">
+        <div class="container-for-title">
+            <h1 class="title columns is-centered">Welcome, {{name}}</h1>
+            <h2 class="subtitle columns is-centered">Tell us what's on your mind about anything technology!</h2>
+        </div>
     </section>
-  </section>
-  </section>
 
-  <hr>
+    {{!-- Blog Post Section --}}
+    <section class="columns is-centered is-family-monospace">
+        <section class="blog-section column is-half">
+            <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Name of your post" id="title">
+                </div>
+            </div>
 
-<section class="section columns is-centered">
-  {{#if blogs.length}}
-  <h3 class="title is-family-monospace">Active Posts</h3>
-  {{#each blogs as |blog|}}
-</div>
-</section>
+            <div class="field">
+                <label class="label">Selling Price</label>
+                <div class="control">
+                    <input class="input" type="email" placeholder="Price of tech equipment">
+                </div>
+            </div>
 
-<section class="section" id="blog-entry">
-      <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
+            <div class="field">
+                <label class="label">Content</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Talk about your finding" id="blogContent"></textarea>
+                </div>
+            </div>
+
+            {{!-- Buttons Section --}}
+            <section class="columns is-centered" id="buttons">
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" id="submitBlog">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Clear</button>
+                    </div>
+                </div>
+            </section>
+            {{!-- End Buttons Section --}}
+        </section>
+    </section>
+
+    <hr>
+
+    {{!-- Active Posts Section --}}
+    <section class="section columns is-centered">
+        {{#if blogs.length}}
+        <h3 class="title is-family-monospace">Active Posts</h3>
+        {{#each blogs as |blog|}}
+        </div>
+    </section>
+
+    <section class="section" id="blog-entry">
+        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
         <button class="button is-danger" id="delete" data-id="{{blog.id}}">DELETE</button>
-    {{/each}}
-  {{/if}}
-  </section>
+        {{/each}}
+        {{/if}}
+    </section>
+    {{!-- End Active Posts Section --}}
 </body>
 <script src="/js/blog.js"></script>
+</html>
+

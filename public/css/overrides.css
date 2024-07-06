@@ -1,3 +1,4 @@
+/* Font size utility class for heading size 1 */
 .is-size-1 {
-    font-size: 7rem !important;
+    font-size: 7rem !important; /* Set font size to 7rem with !important */
 }

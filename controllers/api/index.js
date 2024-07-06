@@ -1,12 +1,23 @@
+// Import the Express router module
 const router = require('express').Router();
-// Import the routes. This is how we make our routes modular.
+
+// Import the loginRoutes module from './loginRoutes'
 const loginRoutes = require('./loginRoutes');
+
+// Import the blogRoutes module from './blogRoutes'
 const blogRoutes = require('./blogRoutes');
-const commentRoutes = require('./commentRoutes')
 
-// When a request is made to the /users or /projects path, it will be directed to the index.js in the /users or /projects folder.
+// Import the commentRoutes module from './commentRoutes'
+const commentRoutes = require('./commentRoutes');
+
+// Use loginRoutes for requests made to '/login' path
 router.use('/login', loginRoutes);
-router.use('/blog', blogRoutes);
-router.use('/comment', commentRoutes)
 
+// Use blogRoutes for requests made to '/blog' path
+router.use('/blog', blogRoutes);
+
+// Use commentRoutes for requests made to '/comment' path
+router.use('/comment', commentRoutes);
+
+// Export the router to make it available for use in other parts of the application
 module.exports = router;

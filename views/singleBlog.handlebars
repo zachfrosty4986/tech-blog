@@ -1,33 +1,35 @@
 <section class="section">
-  <div class="container" id="click">
-    <h1>{{name}} <div id="blogNum">{{id}}</div>
-    </h1>
-    <p>{{description}}</p>
-    <p>Posted by {{user.name}} on {{date_posted}}</p>
-    <div>
-      &#128077; {{likes}}
-      <div class="control">
-        <textarea class="textarea" placeholder="What would you like to say?" id="commentField"></textarea>
-        <button class="button" id="addComment" data-id="{{id}}">Add Comment</button>
-      </div>
+    {{!-- Blog Post Information --}}
+    <div class="container" id="click">
+        <h1>{{name}} <div id="blogNum">{{id}}</div></h1>
+        <p>{{description}}</p>
+        <p>Posted by {{user.name}} on {{date_posted}}</p>
+        <div>
+            &#128077; {{likes}}
+            <div class="control">
+                <textarea class="textarea" placeholder="What would you like to say?" id="commentField"></textarea>
+                <button class="button" id="addComment" data-id="{{id}}">Add Comment</button>
+            </div>
+        </div>
     </div>
-  </div>
+    {{!-- End Blog Post Information --}}
 </section>
 
 <div>
-  {{#if comments.length}}
-  {{#each comments as |comment|}}
-  <div>
-    <p>{{comment.content}}</p><br>
-    <p>Comment Made: {{comment.date_posted}}</p>
-    <br>
-    <p>By:{{user.name}}</p>
+    {{!-- Comments Section --}}
+    {{#if comments.length}}
+    {{#each comments as |comment|}}
+    <div>
+        <p>{{comment.content}}</p><br>
+        <p>Comment Made: {{comment.date_posted}}</p>
+        <br>
+        <p>By: {{user.name}}</p>
+    </div>
     {{/each}}
     {{else}}
     <h1>No comments yet, be the first!</h1>
     {{/if}}
-
-  </div>
+    {{!-- End Comments Section --}}
 </div>
 
 <script src="/js/feedback.js"></script>

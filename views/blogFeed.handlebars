@@ -1,14 +1,21 @@
 <section class="section">
   <div class="container">
+    <!-- Blog Feed Title -->
     <h1 class="title">Blog Feed</h1>
+    <!-- Iterate over each blog in the 'blogs' array -->
     {{#each blogs as |blog|}}
+    <!-- Blog Title with Link -->
     <h3>
       <a href="/blog/{{blog.id}}">{{blog.title}}</a>
     </h3>
+    <!-- Information about the blog post -->
     <p>Created by {{blog.user.name}} on {{blog.date_posted}}</p>
-    <p> {{blog.content}} </p>
+    <!-- Blog Content -->
+    <p>{{blog.content}}</p>
+    <!-- Like Button and Likes Count -->
     <div>
-      &#128077; {{blog.likes}} 
+      &#128077; {{blog.likes}}
+      <!-- Like Button Control -->
       <div class="control">
         <button class="button" id="addLike">Like this post!</button>
       </div>
@@ -16,3 +23,4 @@
     <br>
     {{/each}}
   </div>
+</section>
